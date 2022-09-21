@@ -1,1 +1,33 @@
-<h1>Here is a user given an id</h1>
+<% @users.each do |user| %>
+      <tr>
+      <td><%= user.photo %></td>
+        <td><%= user.name %></td>
+        <td><%= user.bio %></td>
+        <td><%= link_to "Show", user %></td>
+      </tr>
+    <% end %>
+<h1><td><%= user.id %></td></h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>Photo</th>
+      <th>Name</th>
+      <th>Bio</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+      <td><%= user.photo %></td>
+        <td><%= user.name %></td>
+        <td><%= user.bio %></td>
+        <td><%= link_to "Show", user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
