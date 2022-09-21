@@ -5,7 +5,7 @@
     <tr>
     <th>Photo</th>
       <th>Name</th>
-      <th>Bio</th>
+      <th>Number of posts</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
       <tr>
       <td><%= user.photo %></td>
         <td><%= user.name %></td>
-        <td><%= user.bio %></td>
+        <td><%= user.posts.length %></td>
         <td><%= link_to "Show", user %></td>
       </tr>
     <% end %>
