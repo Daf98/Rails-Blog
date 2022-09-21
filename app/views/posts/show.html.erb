@@ -1,7 +1,6 @@
-<div>
-<a href="posts/<%= @post.id %>">Post #<%= @post.id %></a>
-<p><%= @post.title %></p>
-<p><%= @post.text %></p>
+<h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
 <p>Comments:<%= @post.comments_counter %></p>
 <p>Likes:<%= @post.likes_counter %></p>
-</div>
+<p><%= @post.title %></p>
+<p><%= @post.text %></p>
+
