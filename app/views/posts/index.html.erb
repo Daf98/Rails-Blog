@@ -7,8 +7,8 @@
 <a href="posts/<%= post.id %>">Post #<%= index %></a>
 <p><%= post.title %></p>
 <p><%= post.text %></p>
-<p>Comments:<%= post.comments_counter %></p>
-<p>Likes:<%= post.likes_counter %></p>
+<p>Comments: <%= post.comments.length %></p>
+<p>Likes: <%= post.likes.length %></p>
 <% post.find_comments.each do |comment| %>
 <p><%= comment.text %></p>
 <%end%>

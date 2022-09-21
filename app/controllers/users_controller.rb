@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(author: @user).order(id: :asc).limit(3)
+    @posts = Post.where(author: @user).order(id: :asc).limit(2)
   end
 end

@@ -13,7 +13,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-      <td><%= user.photo %></td>
+      <td><img src="<%= user.photo %>"></td>
         <td><%= user.name %></td>
         <td><%= user.posts.length %></td>
         <td><%= link_to "Show", user %></td>
