@@ -1,4 +1,4 @@
-<h1><%= @user.photo %></h1>
+<img src="<%= @user.photo %>">
 <h1><%= @user.name %></h1>
 <h2>Number of posts: <%= @user.posts.length %>
 
@@ -9,5 +9,9 @@
 <p><%= post.text %></p>
 <p>Comments:<%= post.comments_counter %></p>
 <p>Likes:<%= post.likes_counter %></p>
+<% post.find_comments.each do |comment| %>
+<p><%= comment.text %></p>
+<%end%>
+
 </div>
 <% end %>
