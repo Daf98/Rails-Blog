@@ -3,9 +3,11 @@
 <h2>Number of posts: <%= @user.posts.length %>
 
 <% @posts.each_with_index do |post, index| %>
-<div>Post #<%= index %>
+<div>
+<a href="posts/<%= post.id %>">Post #<%= index %></a>
 <p><%= post.title %></p>
 <p><%= post.text %></p>
-<p><% post.comments %></p>
+<p>Comments:<%= post.comments_counter %></p>
+<p>Likes:<%= post.likes_counter %></p>
 </div>
 <% end %>
