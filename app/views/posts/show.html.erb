@@ -1,1 +1,8 @@
-<h1>Here is a post by a user given an id</h1>
+<h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
+<p>Comments:<%= @post.comments.length %></p>
+<p>Likes:<%= @post.likes.length %></p>
+<p><%= @post.title %></p>
+<p><%= @post.text %></p>
+<% @comments.each do |comment| %>
+<p><%= comment.text %></p>
+<%end%>
