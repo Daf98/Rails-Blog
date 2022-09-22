@@ -8,4 +8,27 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
   end
+
+  def new
+    @post = Post.new
+    respond_to do |format|
+      format.html { render :new, locals: { post: @post } }
+    end
+  end
+
+  def create
+    @post = Post.new(params.require(:post).permit(:title, :text, :author))
+    @post.author = current_user
+    respond_to do |format|
+      format.html do
+        if @post.save
+          flash[:success] = 'Post saved successfully'
+          redirect_to users_url
+        else
+          flash.now[:error] = 'Error: Post could not be saved'
+          render :new, locals: { post: @post }
+        end
+      end
+    end
+  end
 end
