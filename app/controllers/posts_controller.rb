@@ -11,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new(strong_params)
+    @post = Post.new
     respond_to do |format|
       format.html { render :new, locals: { post: @post } }
     end
   end
 
   def create
-    @post = Post.new
+    @post = Post.new(strong_params)
     @post.author = current_user
     respond_to do |format|
       format.html do
