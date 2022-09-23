@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
+  def new; end
+
   def create
-    @comment = Comment.new(params.require(:comment).permit(:title, :text))
+    @comment = Comment.new(strong_params)
     @post = Post.find(params[:post_id])
     @user = current_user
     @comment.author = current_user
@@ -15,5 +17,15 @@ class CommentsController < ApplicationController
         end
       end
     end
+  end
+
+  private
+
+  # Using a private method to encapsulate the permissible parameters
+  # is just a good pattern since you'll be able to reuse the same
+  # permit list between create and update. Also, you can specialize
+  # this method with per-user checking of permissible attributes.
+  def strong_params
+    params.require(:comment).permit(:title, :text)
   end
 end

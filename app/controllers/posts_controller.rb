@@ -11,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(strong_params)
     respond_to do |format|
       format.html { render :new, locals: { post: @post } }
     end
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :text, :author))
+    @post = Post.new
     @post.author = current_user
     respond_to do |format|
       format.html do
@@ -31,5 +31,15 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  private
+
+  # Using a private method to encapsulate the permissible parameters
+  # is just a good pattern since you'll be able to reuse the same
+  # permit list between create and update. Also, you can specialize
+  # this method with per-user checking of permissible attributes.
+  def strong_params
+    params.require(:post).permit(:title, :text, :author)
   end
 end
