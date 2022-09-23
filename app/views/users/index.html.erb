@@ -12,7 +12,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-      <td><img src="<%= user.photo %>"></td>
+      <td><img id="user-image" src="<%= user.photo %>"></td>
         <td><a href="users/<%= user.id %>"><%= user.name %></a></td>
         <td><%= user.posts.length %></td>
       </tr>

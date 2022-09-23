@@ -3,18 +3,17 @@
 <img src="<%= @user.photo %>">
 <h1><%= @user.name %></h1>
 <h2>Number of posts: <%= @user.posts.length %>
-
-<% @posts.each_with_index do |post, index| %>
-<div>
+<% @posts.each do |post| %>
+<div class="post">
 <a href="posts/<%= post.id %>">Post #<%= post.id %></a>
 <p><%= post.title %></p>
 <p><%= post.text %></p>
-<p>Comments: <%= post.comments.length %></p>
-<p>Likes: <%= post.likes.length %></p>
+</div>
+<h4>Comments: <%= post.comments.length %>, Likes: <%= post.likes.length %></h4>
 <% post.find_comments.each do |comment| %>
-<p><%= comment.text %></p>
+<p><%= comment.author.name %>: <%= comment.text %></p>
 <%end%>
 
-</div>
+
 <% end %>
 </div>
