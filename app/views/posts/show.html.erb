@@ -1,13 +1,16 @@
+<input hidden="true"<%= @user = @post.author %>/>
 <h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
 <p>Title: <%= @post.title %></p>
 <p>Text: <%= @post.text %></p>
+  <%= form_with url: user_post_likes_url(@user, @post), method: :post do |f| %>
+    <% f.submit 'Like' %>
+  <% end %>
 <p>Comments: <%= @post.comments.length %>, Likes: <%= @post.likes.length %></p>
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
 <p><%= comment.text %></p>
 <% end %>
 <h1>Create New Comment</h1>
-<input hidden="true"<%= @user = @post.author %>/>
 <%= form_with scope: :comment, url: user_post_comments_url(@user, @post), method: :post, local: true do |f| %>
   <div>
   Text: <%= f.text_area :text %>
