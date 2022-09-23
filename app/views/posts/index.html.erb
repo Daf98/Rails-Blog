@@ -4,7 +4,7 @@
 
 <% @posts.each_with_index do |post, index| %>
 <div>
-<a href="posts/<%= post.id %>">Post #<%= index %></a>
+<a href="posts/<%= post.id %>">Post #<%= post.id %></a>
 <p><%= post.title %></p>
 <p><%= post.text %></p>
 <p>Comments: <%= post.comments.length %></p>
