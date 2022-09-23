@@ -3,10 +3,9 @@
 <table>
   <thead>
     <tr>
-    <th>Photo</th>
-      <th>Name</th>
-      <th>Number of posts</th>
-      <th colspan="4"></th>
+    <th class="headers">Photo</th>
+      <th class="headers">Name</th>
+      <th class="headers">Number of posts</th>
     </tr>
   </thead>
 
@@ -14,9 +13,8 @@
     <% @users.each do |user| %>
       <tr>
       <td><img src="<%= user.photo %>"></td>
-        <td><%= user.name %></td>
+        <td><a href="users/<%= user.id %>"><%= user.name %></a></td>
         <td><%= user.posts.length %></td>
-        <td><%= link_to "Show", user %></td>
       </tr>
     <% end %>
   </tbody>
