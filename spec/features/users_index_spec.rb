@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', js: true do
+RSpec.describe 'Users', type: :feature do
   describe 'index page' do
     before(:each) do
-      visit '/users'
+      visit('/')
     end  
     it 'shows the right content' do
       expect(page).to have_content('Users')
