@@ -21,7 +21,6 @@ RSpec.describe 'Users', type: :feature do
     end
     it 'shows the users first 3 posts' do
       expect(page).to have_content(first_user.posts.length)
-      # something else
     end
     it 'shows a button to see all posts' do
       expect(page).to have_link('See all posts')
