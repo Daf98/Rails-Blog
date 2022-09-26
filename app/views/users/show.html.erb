@@ -8,7 +8,7 @@
 <div class="posts">
 <% @posts.each_with_index do |post, index| %>
 <div class="post">
-<h4>Post #<%= post.id %></h4>
+<h4><a href="/users/<%= @user.id %>/posts/<%= post.id %>">Post #<%= post.id %></a></h4>
 <p><%= post.title %></p>
 <p><%= post.text %></p>
 </div>
