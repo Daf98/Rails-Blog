@@ -41,6 +41,12 @@ Cloning a repository
 - Twitter: [@dafne_azzolina](https://twitter.com/dafne_azzolina)
 - LinkedIn: [dafne-azzolina](https://www.linkedin.com/in/dafne-azzolina/)
 
+👤 **Mike Martínez**
+
+- GitHub: [@mikemtzp](https://github.com/mikemtzp)
+- Twitter: [@mikemtzp](https://twitter.com/mikemtzp)
+- LinkedIn: [Mike Martínez](https://www.linkedin.com/in/mike-mart%C3%ADnez/)
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
