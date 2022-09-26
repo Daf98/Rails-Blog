@@ -11,7 +11,7 @@ RSpec.describe 'Users', type: :request do
 
     describe 'GET /show' do
       it 'returns http success' do
-        get '/users/1'
+        get '/users/127'
         expect(response).to have_http_status(:success)
       end
     end
@@ -24,7 +24,7 @@ RSpec.describe 'Users', type: :request do
         expect(response.body).to include('Users')
       end
       it 'renders the show template' do
-        get '/users/1'
+        get '/users/127'
         expect(response).to render_template(:show)
         expect(response.body).to include('Bio')
       end
