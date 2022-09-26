@@ -10,7 +10,7 @@
 <p><%= post.text %></p>
 </div>
 <h4>Comments: <%= post.comments.length %>, Likes: <%= post.likes.length %></h4>
-<% post.find_comments.each do |comment| %>
+<% post.find_comments.includes(:author).each do |comment| %>
 <p><%= comment.author.name %>: <%= comment.text %></p>
 <%end%>
 
