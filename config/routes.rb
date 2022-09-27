@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'sign_up', to: 'devise/registrations#new'
   end
+  devise_scope :user do
+    get 'change_password', to: 'devise/password#new'
+  end
   root 'users#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show] do
