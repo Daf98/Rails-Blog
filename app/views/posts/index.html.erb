@@ -1,6 +1,6 @@
 <div class="page-start">
 <a class="back-arrow" href="/users/<%= @user.id %>">Back</a>
-<img src="<%= @user.photo %>">
+<img class="user-image" src="<%= @user.photo %>">
 <h1><%= @user.name %></h1>
 <h2>Number of posts: <%= @user.posts.length %>
 <% @posts.each do |post| %>

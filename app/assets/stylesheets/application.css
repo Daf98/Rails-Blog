@@ -93,6 +93,6 @@ td:last-child {
   padding-bottom: 1rem;
 }
 
-#user-image {
+.user-image {
   height: 100px;
 }
