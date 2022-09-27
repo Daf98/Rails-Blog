@@ -8,30 +8,69 @@
 
 - Ruby
 - Rails
+- Rspec
+- Capybara
 
 ## Getting Started
-
-### Prerequisites
 #### Setup
-Cloning a repository
 
-- On GitHub.com, navigate to the main page of the repository;
+Follow these steps on your console to properly clone this repository on your desktop:
 
-- Above the list of files, click "Code" button;
+```
+$ cd desktop
+$ git clone 'repo_path'
+$ cd 'repo_name'
+$ code .
+Run 'ruby file_name' to see outputs in the console.
+Run 'rubocop' to check linter offenses.
+```
 
-- Copy the URL to clone the repository.
+Create database for the project with `bin/rails db:create`, otherwise create databases manually in PostgreSQL.
 
-- To clone the repository using HTTPS : https://github.com/Daf98/Rails-Blog.git
+If necessary, add username and password in `config/database.yml` for development and test:
+```
+development:
+  <<: *default
+  database: rails
+  username: postgres
+  password:
+  
+  test:
+  <<: *default
+  database: rails
+  username: postgres
+  password:
+```
 
-- To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority : git@github.com/Daf98/Rails-Blog.git
+Add the following gems into your `Gemfile` development and test groups:
 
-- To clone a repository using GitHub CLI : gh repo clone Daf98/Rails-Blog
+```
+group :development, :test do
+  gem 'capybara'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'ffi'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'webdrivers'
+end
+```
 
-- Open Terminal
+```
+group :development do
+  gem "web-console"
+  gem 'bullet'
+end
+```
 
-- Change the current working directory to the location where you want the cloned directory
+Install all gems `bundle install`
 
-- Type git clone, and then paste the URL you copied earlier
+Set up bullet gem by running: `bundle exec rails g bullet:install`
+
+Set up RSpec in your app and create the Spec folder `rails g rspec:install`
+
+Run the migration into your testing environment `rails db:migrate RAILS_ENV=test`
+
+To see all tests with description run `rspec spec --format documentation`
 
 ## Authors
 
@@ -40,6 +79,12 @@ Cloning a repository
 - GitHub: [@Daf98](https://github.com/Daf98)
 - Twitter: [@dafne_azzolina](https://twitter.com/dafne_azzolina)
 - LinkedIn: [dafne-azzolina](https://www.linkedin.com/in/dafne-azzolina/)
+
+👤 **Mike Martínez**
+
+- GitHub: [@mikemtzp](https://github.com/mikemtzp)
+- Twitter: [@mikemtzp](https://twitter.com/mikemtzp)
+- LinkedIn: [Mike Martínez](https://www.linkedin.com/in/mike-mart%C3%ADnez/)
 
 ## Show your support
 
