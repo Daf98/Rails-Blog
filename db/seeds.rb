@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-  User.create(name: 'Daf', bio: 'Programmer from Argentina', photo: 'https://marcorockmusic1.files.wordpress.com/2011/10/loveless.jpg)
-  User.create(name: 'Gabi', bio: 'Translator from Spain', photo: 'https://i.scdn.co/image/ab67616d0000b273934a734586b2a0a7fbddb81e')
+  # User.create(name: 'Daf', bio: 'Programmer from Argentina', photo: 'https://marcorockmusic1.files.wordpress.com/2011/10/loveless.jpg)
+  # User.create(name: 'Gabi', bio: 'Translator from Spain', photo: 'https://i.scdn.co/image/ab67616d0000b273934a734586b2a0a7fbddb81e')
