@@ -4,7 +4,7 @@ RSpec.describe 'Posts', type: :feature do
   describe 'index page' do
     first_post = Post.find_by(id: 145)
     first_user = User.find_by(id: first_post.author_id)
-    first_comment = Comment.first
+    first_comment = Comment.where(post_id: first_post.id).first
 
     before(:each) do
       visit("/users/#{first_user.id}/posts/#{first_post.id}")
