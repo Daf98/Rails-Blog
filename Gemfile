@@ -72,4 +72,5 @@ group :development do
   # gem "spring"
   gem 'bullet'
   gem 'letter_opener', '~> 1.4', '>= 1.4.1'
+  gem 'cancancan'
 end
