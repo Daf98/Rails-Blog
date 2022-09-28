@@ -30,14 +30,23 @@ h1 {
   color: #4fbee7;
 }
 
+button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
 p,
 td,
-a {
+a,
+.navbar-link {
   color: white;
   font-weight: bold;
 }
 
-a {
+a,
+.navbar-link {
   cursor: pointer;
 }
 
@@ -95,4 +104,11 @@ td:last-child {
 
 .user-image {
   height: 100px;
+}
+
+.user-info {
+  display: flex;
+  gap: 2rem;
+  align-self: flex-end;
+  padding: 1rem;
 }

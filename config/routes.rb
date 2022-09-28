@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  # get 'posts/id'
-  # get 'posts/show'
-  # get 'users/id'
-  # get 'users/show'
+  devise_for :users
+  devise_scope :user do
+    get 'login', to: 'devise/sessions#new'
+  end
+  devise_scope :user do
+    get 'sign_up', to: 'devise/registrations#new'
+  end
+  devise_scope :user do
+    get 'change_password', to: 'devise/password#new'
+  end
   root 'users#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show] do
@@ -11,7 +17,4 @@ Rails.application.routes.draw do
     resources :likes, only: [:create]
   end
   end
-  
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
