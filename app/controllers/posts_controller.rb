@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:comments, :likes).where(author: @user).order(id: :asc)
@@ -32,6 +33,13 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = 'The post was successfully destroyed.'
+    redirect_to user_posts_path
   end
 
   private

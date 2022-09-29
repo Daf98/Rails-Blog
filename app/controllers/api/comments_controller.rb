@@ -1,5 +1,12 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post_id: @post.id)
+    render json: { status: 'SUCCESS', message: 'Loaded users', data: @comments }, status: :ok
+  end
+
   def new
     @comment = Comment.new
     respond_to do |format|
