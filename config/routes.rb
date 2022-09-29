@@ -22,7 +22,7 @@ end
   namespace :api do
     resources :users, only: [:index] do
       resources :posts, only: [:index], format: :json do
-        resources :comments, only: [:index, :create], format: :json
+        resources :comments, only: [:index, :new, :create], format: :json
       end
     end
   end
