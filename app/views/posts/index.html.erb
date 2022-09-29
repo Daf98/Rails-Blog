@@ -13,7 +13,5 @@
 <% post.find_comments.includes(:author).each do |comment| %>
 <p><%= comment.author.name %>: <%= comment.text %></p>
 <%end%>
-
-
 <% end %>
 </div>

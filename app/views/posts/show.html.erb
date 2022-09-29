@@ -5,8 +5,8 @@
 <h3>Post #<%= @post.id %> by <%= @post.author.name %></h3>
 <p>Title: <%= @post.title %></p>
 <p>Text: <%= @post.text %></p>
-<% if can? :delete_post, @post %>
-        <%= button_to "Delete post", user_post_path, method: :delete %>
+<% if can? :delete, @post %>
+        <%= button_to "Delete post", user_post_path, method: :delete, :class => 'navbar-link' %>
       <% end %>
 
 </div>
@@ -17,6 +17,9 @@
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
 <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% if can? :delete, comment %>
+          <%= button_to "Delete comment", user_post_comment_url(comment.author, comment.post, comment), method: :delete %>
+        <% end %>
 <% end %>
 <h1>Create New Comment</h1>
 <%= form_with scope: :comment, url: user_post_comments_url(@user, @post), method: :post, local: true do |f| %>

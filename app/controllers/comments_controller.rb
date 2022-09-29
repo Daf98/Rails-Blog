@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @comment = Comment.new
     respond_to do |format|
@@ -22,6 +23,11 @@ class CommentsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
   end
 
   private
