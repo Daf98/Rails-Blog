@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <nav class="user-info">
+  <%= link_to "Sign up", '/sign_up', :class => 'navbar-link'  %>
+<%= link_to "Login", '/login', :class => 'navbar-link'  %>
+  <% if user_signed_in?%>
+      <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }, :class => 'navbar-link'}  %>
+    <% end %>
+</nav>
     <%= yield %>
     <% flash.each do |type, msg| %>
         <div class="alert <%= type %>">
