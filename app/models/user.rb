@@ -23,5 +23,4 @@ class User < ApplicationRecord
   end
 
   ROLES = %i[admin default].freeze
-
 end

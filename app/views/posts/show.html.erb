@@ -18,7 +18,7 @@
 <% @comments.each do |comment| %>
 <p><%= comment.author.name %>: <%= comment.text %></p>
         <% if can? :delete, comment %>
-          <%= button_to "Delete comment", user_post_comment_url(comment.author, comment.post, comment), method: :delete %>
+          <%= button_to "Delete comment", user_post_comment_url(comment.author, comment.post, comment), method: :delete, :class => 'navbar-link' %>
         <% end %>
 <% end %>
 <h1>Create New Comment</h1>

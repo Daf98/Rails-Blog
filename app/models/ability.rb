@@ -11,5 +11,4 @@ class Ability
 
     can :manage, :all
   end
-
 end
