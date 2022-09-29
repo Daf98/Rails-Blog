@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :destroy]
     resources :likes, only: [:create]
   end
+end
 
   # API endpoints
   namespace :api do
@@ -25,5 +26,4 @@ Rails.application.routes.draw do
       end
     end
   end
-end
 end
