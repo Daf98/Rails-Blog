@@ -16,6 +16,9 @@ gem 'devise'
 
 gem 'jwt'
 
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -60,6 +63,7 @@ group :development, :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'webdrivers'
 end
 
