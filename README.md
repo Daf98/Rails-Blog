@@ -69,8 +69,8 @@ end
 
 ```
 group :development do
-  gem "web-console"
   gem 'bullet'
+  gem "web-console"
 end
 ```
 
