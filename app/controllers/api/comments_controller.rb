@@ -1,5 +1,13 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
+  def index
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post_id: @post.id)
+    render json: { status: 'SUCCESS', message: 'Loaded users', data: @comments }, status: :ok
+  end
+
   def new
     @comment = Comment.new
     respond_to do |format|
@@ -8,20 +16,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(strong_params)
     @post = Post.find(params[:post_id])
-    @user = current_user
-    @comment.author = current_user
-    @comment.post_id = @post.id
-    respond_to do |format|
-      format.html do
-        if @comment.save
-          flash[:success] = 'Comment saved successfully'
-          redirect_to user_post_url(@user, @post)
-        else
-          flash.now[:error] = 'Error: Comment could not be saved'
-        end
-      end
+    @comment = Comment.new(strong_params)
+    @comment.author = @current_user
+    @comment.post = @post
+    if @comment.save
+      render json: @comment, status: :created
+    else
+      render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

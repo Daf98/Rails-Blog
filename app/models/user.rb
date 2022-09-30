@@ -21,4 +21,6 @@ class User < ApplicationRecord
   after_initialize do |user|
     user.posts_counter = 0
   end
+
+  ROLES = %i[admin default].freeze
 end

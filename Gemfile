@@ -14,6 +14,11 @@ gem 'pg', '~> 1.1'
 
 gem 'devise'
 
+gem 'jwt'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -58,6 +63,7 @@ group :development, :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'webdrivers'
 end
 
@@ -71,4 +77,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem 'bullet'
+  gem 'cancancan'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 end
